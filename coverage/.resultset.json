@@ -177,11 +177,57 @@
           null
         ]
       },
+      "/Users/brianguthrie/turing/mod3/market_money/spec/factories/market.rb": {
+        "lines": [
+          1,
+          1,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          null,
+          null
+        ]
+      },
+      "/Users/brianguthrie/turing/mod3/market_money/spec/factories/market_vendor.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/brianguthrie/turing/mod3/market_money/spec/factories/vendor.rb": {
+        "lines": [
+          1,
+          1,
+          11,
+          11,
+          11,
+          11,
+          11,
+          null,
+          null
+        ]
+      },
       "/Users/brianguthrie/turing/mod3/market_money/config/routes.rb": {
         "lines": [
           1,
           null,
           null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
           null,
           null,
           null
@@ -194,6 +240,10 @@
           1,
           null,
           1,
+          null,
+          1,
+          8,
+          null,
           null
         ]
       },
@@ -239,7 +289,6 @@
           2,
           2,
           2,
-          2,
           null,
           null
         ]
@@ -253,8 +302,99 @@
           1,
           null
         ]
+      },
+      "/Users/brianguthrie/turing/mod3/market_money/spec/requests/api/v0/markets_request_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          5,
+          5,
+          5,
+          5,
+          5,
+          null,
+          5,
+          5,
+          5,
+          null,
+          5,
+          5,
+          null,
+          5,
+          5,
+          null,
+          5,
+          5,
+          null,
+          5,
+          5,
+          null,
+          5,
+          5,
+          null,
+          5,
+          5,
+          null,
+          5,
+          5,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/brianguthrie/turing/mod3/market_money/app/controllers/api/v0/MarketsController.rb": {
+        "lines": [
+          1,
+          1,
+          2,
+          null,
+          null
+        ]
+      },
+      "/Users/brianguthrie/turing/mod3/market_money/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/brianguthrie/turing/mod3/market_money/app/serializers/market_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
       }
     },
-    "timestamp": 1684179441
+    "timestamp": 1684190726
   }
 }
