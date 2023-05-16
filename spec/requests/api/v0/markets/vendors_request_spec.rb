@@ -20,6 +20,8 @@ RSpec.describe 'Markets Vendors API' do
       
       json = JSON.parse(response.body, symbolize_names: true)
 
+      expect(json[:data].count).to eq(3)
+
       json[:data].each do |vendor|
         expect(vendor).to have_key(:id)
         expect(vendor[:id]).to be_an(String)
