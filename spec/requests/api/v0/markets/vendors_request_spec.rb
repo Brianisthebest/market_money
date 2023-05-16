@@ -6,13 +6,16 @@ RSpec.describe 'Markets Vendors API' do
       market_1 = create(:market)
       market_2 = create(:market)
 
-      vendors = create_list(:vendor, 5)
+      @vendors = []
+      5.times do
+        @vendors << create(:vendor, credit_accepted: true)
+      end
 
-      create(:market_vendor, market_id: market_1.id, vendor_id: vendors[0].id)
-      create(:market_vendor, market_id: market_1.id, vendor_id: vendors[1].id)
-      create(:market_vendor, market_id: market_1.id, vendor_id: vendors[2].id)
-      create(:market_vendor, market_id: market_2.id, vendor_id: vendors[3].id)
-      create(:market_vendor, market_id: market_2.id, vendor_id: vendors[4].id)
+      create(:market_vendor, market_id: market_1.id, vendor_id: @vendors[0].id)
+      create(:market_vendor, market_id: market_1.id, vendor_id: @vendors[1].id)
+      create(:market_vendor, market_id: market_1.id, vendor_id: @vendors[2].id)
+      create(:market_vendor, market_id: market_2.id, vendor_id: @vendors[3].id)
+      create(:market_vendor, market_id: market_2.id, vendor_id: @vendors[4].id)
 
       get "/api/v0/markets/#{market_1.id}/vendors"
 
@@ -52,6 +55,7 @@ RSpec.describe 'Markets Vendors API' do
     it 'sad path: returns 404 if market does not exist' do
       get '/api/v0/markets/1/vendors'
 
+      expect(response).to_not be_successful
       expect(response.status).to eq(404)
     end
   end
