@@ -61,4 +61,40 @@ RSpec.describe 'Markets API' do
       expect(markets[:data][0][:attributes][:vendor_count]).to be_an(Integer)
     end
   end
+
+  describe 'GET /api/v0/markets/:id' do
+    it 'returns a single market' do
+      market = create(:market, name: 'Farmers Market',
+                               street: '123 Main St',
+                               city: 'Colo Springs',
+                               county: 'El Paso',
+                               state: 'CO',
+                               zip: '80123',
+                               lat: '39',
+                               lon: '40')
+
+      get "/api/v0/markets/#{market.id}"
+
+      json = JSON.parse(response.body, symbolize_names: true)
+
+      expect(response).to be_successful
+
+      expect(json[:data]).to have_key(:id)
+      expect(json[:data][:id]).to eq(market.id.to_s)
+      expect(json[:data][:attributes][:name]).to eq(market.name)
+      expect(json[:data][:attributes][:street]).to eq(market.street)
+      expect(json[:data][:attributes][:city]).to eq(market.city)
+      expect(json[:data][:attributes][:county]).to eq(market.county)
+      expect(json[:data][:attributes][:state]).to eq(market.state)
+      expect(json[:data][:attributes][:zip]).to eq(market.zip)
+      expect(json[:data][:attributes][:lat]).to eq(market.lat)
+      expect(json[:data][:attributes][:lon]).to eq(market.lon)
+    end
+
+    it 'sad path: returns 404 if market does not exist' do
+      get '/api/v0/markets/1'
+
+      expect(response.status).to eq(404)
+    end
+  end
 end
