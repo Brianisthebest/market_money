@@ -86,7 +86,56 @@ RSpec.describe 'Vendors API' do
 
       expect(response).to_not be_successful
       expect(response.status).to eq(400)
-      expect(response.body).to eq("{\"errors\":[{\"detail\":\"Validations failed: Contact phone can't be blank and Credit accepted is not included in the list\"}]}")
+
+      json = JSON.parse(body, symbolize_names: true)
+
+      expect(json).to have_key(:errors)
+      expect(json[:errors][0][:detail]).to eq("Validations failed: Contact phone can't be blank and Credit accepted is not included in the list")
+    end
+  end
+
+  describe 'PATCH /api/v0/vendors/:id' do
+    it 'updates a vendor' do
+      vendor_id = create(:vendor).id
+      previous_name = Vendor.last.name
+      vendor_params = { name: "New Vendor Name" }
+      headers = { "CONTENT_TYPE" => "application/json" }
+
+      patch "/api/v0/vendors/#{vendor_id}", headers: headers, params: JSON.generate({vendor: vendor_params})
+      vendor = Vendor.find_by(id: vendor_id)
+
+      expect(response).to be_successful
+      expect(vendor.name).to_not eq(previous_name)
+      expect(vendor.name).to eq("New Vendor Name")
+    end
+
+    it 'returns an error if vendor field is nil' do
+      vendor_id = create(:vendor).id
+      vendor_params = { name: nil }
+      headers = { "CONTENT_TYPE" => "application/json" }
+
+      patch "/api/v0/vendors/#{vendor_id}", headers: headers, params: JSON.generate({vendor: vendor_params})
+      vendor = Vendor.find_by(id: vendor_id)
+
+      expect(response).to_not be_successful
+      expect(vendor.name).to_not eq(nil)
+      expect(response.status).to eq(400)
+
+      json = JSON.parse(body, symbolize_names: true)
+
+      expect(json).to have_key(:errors)
+      expect(json[:errors][0][:detail]).to eq("Validations failed: Name can't be blank")
+    end
+
+    it 'returns an error if vendor can not be found' do
+      patch "/api/v0/vendors/9999999999"
+
+      expect(response).to_not be_successful
+      expect(response.status).to eq(404)
+
+      json = JSON.parse(response.body, symbolize_names: true)
+
+      expect(json[:errors][0][:detail]).to eq('Couldn\'t find Vendor with \'id\'=9999999999')
     end
   end
 end
