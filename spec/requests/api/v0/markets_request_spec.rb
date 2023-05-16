@@ -94,7 +94,7 @@ RSpec.describe 'Markets API' do
     it 'sad path: returns 404 if market does not exist' do
       get '/api/v0/markets/1'
 
-      require 'pry'; binding.pry
+      expect(response.status).to eq(404)
     end
   end
 end
