@@ -138,4 +138,25 @@ RSpec.describe 'Vendors API' do
       expect(json[:errors][0][:detail]).to eq('Couldn\'t find Vendor with \'id\'=9999999999')
     end
   end
+
+  describe 'DELETE /api/v0/vendors/:id' do
+    it 'deletes a vendor' do
+      vendor = create(:vendor)
+
+      expect{ delete "/api/v0/vendors/#{vendor.id}" }.to change(Vendor, :count).by(-1)
+
+      expect{Vendor.find(vendor.id)}.to raise_error(ActiveRecord::RecordNotFound)
+    end
+
+    it 'returns a 404 if the vendor can not be found' do
+      delete "/api/v0/vendors/9999999999"
+
+      expect(response).to_not be_successful
+      expect(response.status).to eq(404)
+      
+      json = JSON.parse(response.body, symbolize_names: true)
+
+      expect(json[:errors][0][:detail]).to eq('Couldn\'t find Vendor with \'id\'=9999999999')
+    end
+  end
 end
