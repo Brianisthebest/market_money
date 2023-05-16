@@ -6,7 +6,7 @@ class Api::V0::Markets::VendorsController < ApplicationController
       render json: {
                      "errors": [
                       { 
-                        "detail": "Couldn't find Market with 'id'=#{params[:id]}" 
+                        "detail": "Couldn't find Market with 'id'=#{params[:market_id]}" 
                       }]
                     },
                     status: 404

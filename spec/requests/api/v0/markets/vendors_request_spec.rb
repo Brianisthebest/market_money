@@ -57,6 +57,10 @@ RSpec.describe 'Markets Vendors API' do
 
       expect(response).to_not be_successful
       expect(response.status).to eq(404)
+
+      json = JSON.parse(response.body, symbolize_names: true)
+
+      expect(json[:errors][0][:detail]).to eq('Couldn\'t find Market with \'id\'=1')
     end
   end
 end

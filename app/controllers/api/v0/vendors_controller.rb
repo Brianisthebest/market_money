@@ -31,6 +31,30 @@ class Api::V0::VendorsController < ApplicationController
     end
   end
 
+  def update
+    vendor = Vendor.find_by_id(params[:id])
+
+    if vendor.nil?
+    render json: {
+      "errors": [
+        { 
+          "detail": "Couldn't find Vendor with 'id'=#{params[:id]}"
+          }]
+        },
+        status: 404
+    elsif vendor.update(vendor_params)
+      render json: VendorSerializer.new(vendor)
+    else
+      render json: {
+        "errors": [
+         { 
+           "detail": "Validations failed: #{vendor.errors.full_messages.to_sentence}" 
+         }]
+       },
+       status: 400
+    end
+  end
+
   private
   def vendor_params
     params.require(:vendor).permit(:name, :description, :contact_name, :contact_phone, :credit_accepted)
