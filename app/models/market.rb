@@ -7,4 +7,8 @@ class Market < ApplicationRecord
   def vendor_count
     self.vendors.count
   end
+
+  def get_vendors
+    self.vendors
+  end
 end
