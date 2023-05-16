@@ -14,7 +14,7 @@ RSpec.describe 'Markets Vendors API' do
       create(:market_vendor, market_id: market_2.id, vendor_id: vendors[3].id)
       create(:market_vendor, market_id: market_2.id, vendor_id: vendors[4].id)
 
-      get "/api/v0/markets/#{@market_1.id}/vendors"
+      get "/api/v0/markets/#{market_1.id}/vendors"
       
     end
   end
