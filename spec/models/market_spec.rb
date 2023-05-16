@@ -21,7 +21,11 @@ RSpec.describe Market, type: :model do
     before(:each) do
       @market_1 = create(:market)
       @market_2 = create(:market)
-      @vendors = create_list(:vendor, 5)
+
+      @vendors = []
+      5.times do
+        @vendors << create(:vendor, credit_accepted: true)
+      end
 
       create(:market_vendor, market_id: @market_1.id, vendor_id: @vendors[0].id)
       create(:market_vendor, market_id: @market_1.id, vendor_id: @vendors[1].id)

@@ -1,5 +1,6 @@
 class Api::V0::Markets::VendorsController < ApplicationController
   before_action :set_market
+  
   def index
     if @market.nil?
       render json: {
