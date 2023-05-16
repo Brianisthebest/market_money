@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # get '/api/v0/markets', to: 'api/v0/markets#index'
   namespace :api do
     namespace :v0 do
-      resources :markets, only: [:index]
+      resources :markets, only: [:index, :show]
     end
   end
 end
