@@ -55,6 +55,22 @@ RSpec.describe 'Market Vendors API' do
       expect(json[:errors][0][:detail]).to eq("Validation failed: Market must exist")
     end
 
-    it 'returns a 404 if vendor does not exist'
+    it 'returns a 404 if vendor does not exist' do
+      market_1 = create(:market)
+
+      market_vendor_params = ({ "market_id": market_1.id, "vendor_id": 1 })
+
+      headers = {"CONTENT_TYPE" => "application/json"}
+
+      post '/api/v0/market_vendors', headers: headers, params: JSON.generate(market_vendor: market_vendor_params)
+      
+      expect(response).to_not be_successful
+      expect(response.status).to eq(404)
+
+      json = JSON.parse(response.body, symbolize_names: true)
+
+      expect(json).to have_key(:errors)
+      expect(json[:errors][0][:detail]).to eq("Validation failed: Vendor must exist")
+    end
   end
 end
