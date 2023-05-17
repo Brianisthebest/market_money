@@ -105,4 +105,27 @@ RSpec.describe 'Markets API' do
       expect(json[:errors][0][:detail]).to eq('Couldn\'t find Market with \'id\'=1')
     end
   end
+
+  describe 'GET /api/v0/markets/search' do
+    it 'accepts city, name, and state and returns markets meeting the search criteria' do
+      market_1 = create(:market, name: 'Farmers Market', city: 'Colorado Springs', state: 'Colorado')
+
+      query_params = {
+                      city: 'Colorado Springs',
+                      state: 'Colorado',
+                      name: 'Farmers Market'
+      }
+      get '/api/v0/markets/search', params: query_params
+
+      expect(response).to be_successful
+      expect(response.status).to eq(200)
+
+      json = JSON.parse(response.body, symbolize_names: true)
+
+      expect(json[:data][0][:id]).to eq(market_1.id.to_s)
+      expect(json[:data][0][:attributes][:name]).to eq(market_1.name)
+      expect(json[:data][0][:attributes][:street]).to eq(market_1.street)
+      expect(json[:data][0][:attributes][:city]).to eq(market_1.city)
+    end
+  end
 end
