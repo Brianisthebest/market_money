@@ -120,21 +120,21 @@ RSpec.describe 'Market Vendors API' do
         expect(market[:id]).to eq(market_2.id.to_s)
         expect(market[:id]).to_not eq(market_1.id.to_s)
       end
+    end
 
-      it 'returns a 404 if market does not exist' do
-        market_vendor_params = ({ "market_id": 10, "vendor_id": 10 })
+    it 'returns a 404 if market does not exist' do
+      market_vendor_params = ({ "market_id": 10, "vendor_id": 10 })
 
-        headers = {"CONTENT_TYPE" => "application/json"}
+      headers = {"CONTENT_TYPE" => "application/json"}
 
-        delete "/api/v0/market_vendors/", headers: headers, params: JSON.generate(market_vendor: market_vendor_params)
+      delete "/api/v0/market_vendors/", headers: headers, params: JSON.generate(market_vendor: market_vendor_params)
 
-        expect(response).to_not be_successful
-        expect(response.status).to eq(404)
+      expect(response).to_not be_successful
+      expect(response.status).to eq(404)
 
-        json = JSON.parse(response.body, symbolize_names: true)
+      json = JSON.parse(response.body, symbolize_names: true)
 
       expect(json[:errors][0][:detail]).to eq("No MarketVendor with market_id=10 AND vendor_id=10 exists")
-      end
     end
   end
 end
