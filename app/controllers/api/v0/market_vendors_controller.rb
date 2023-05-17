@@ -1,7 +1,7 @@
 class Api::V0::MarketVendorsController < ApplicationController
   def create
     market_vendor = MarketVendor.new(market_vendor_params)
-
+require 'pry'; binding.pry
     if market_vendor.save
       render json: MarketVendorSerializer.new(market_vendor), status: 201
     end
