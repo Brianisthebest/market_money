@@ -182,13 +182,13 @@
           1,
           1,
           13,
-          13,
-          13,
-          13,
-          13,
-          13,
-          13,
-          13,
+          14,
+          14,
+          14,
+          14,
+          14,
+          14,
+          14,
           null,
           null
         ]
@@ -207,11 +207,11 @@
         "lines": [
           1,
           1,
-          25,
-          25,
-          25,
-          25,
-          4,
+          26,
+          26,
+          26,
+          26,
+          5,
           null,
           null
         ]
@@ -227,6 +227,9 @@
           1,
           1,
           1,
+          1,
+          1,
+          null,
           1,
           1,
           null,
@@ -308,6 +311,53 @@
           null,
           1,
           1,
+          null
+        ]
+      },
+      "/Users/brianguthrie/turing/mod3/market_money/spec/requests/api/v0/market_vendors_request_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          1,
+          1,
+          null,
           null
         ]
       },
@@ -659,6 +709,30 @@
           null
         ]
       },
+      "/Users/brianguthrie/turing/mod3/market_money/app/controllers/api/v0/market_vendors_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/brianguthrie/turing/mod3/market_money/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
       "/Users/brianguthrie/turing/mod3/market_money/app/controllers/api/v0/markets/vendors_controller.rb": {
         "lines": [
           1,
@@ -682,12 +756,6 @@
           1,
           2,
           null,
-          null
-        ]
-      },
-      "/Users/brianguthrie/turing/mod3/market_money/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
           null
         ]
       },
@@ -814,6 +882,6 @@
         ]
       }
     },
-    "timestamp": 1684279739
+    "timestamp": 1684340002
   }
 }

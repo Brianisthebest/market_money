@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2023-05-16T17:28:59-06:00">2023-05-16T17:28:59-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2023-05-17T10:13:22-06:00">2023-05-17T10:13:22-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="green">
-  100.0%
+  95.67%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.03
+         1.91
        </span>
     </span> hits/line
     )
@@ -39,15 +39,15 @@
   <a name="AllFiles"></a>
 
   <div>
-    <b>26</b> files in total.
+    <b>28</b> files in total.
   </div>
 
   <div class="t-line-summary">
-    <b>353</b> relevant lines,
-    <span class="green"><b>353</b> lines covered</span> and
-    <span class="red"><b>0</b> lines missed. </span>
+    <b>393</b> relevant lines,
+    <span class="green"><b>376</b> lines covered</span> and
+    <span class="red"><b>17</b> lines missed. </span>
     (<span class="green">
-  100.0%
+  95.67%
 </span>
 )
   </div>
@@ -69,6 +69,17 @@
         </tr>
       </thead>
       <tbody>
+        
+          <tr class="t-file">
+            <td class="strong t-file__name"><a href="#6ac2f26c7049b0524f2d8c6cdcb17e32e50cd3e2" class="src_link" title="app/controllers/api/v0/market_vendors_controller.rb">app/controllers/api/v0/market_vendors_controller.rb</a></td>
+            <td class="yellow strong cell--number t-file__coverage">88.89 %</td>
+            <td class="cell--number">14</td>
+            <td class="cell--number">9</td>
+            <td class="cell--number">8</td>
+            <td class="cell--number">1</td>
+            <td class="cell--number">0.89</td>
+            
+          </tr>
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#6984c499f62cf8865afd1a7a89ff6d0bc4118431" class="src_link" title="app/controllers/api/v0/markets/vendors_controller.rb">app/controllers/api/v0/markets/vendors_controller.rb</a></td>
@@ -260,9 +271,9 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#192a110d7eba761975645e80903f4f6af6056a91" class="src_link" title="config/routes.rb">config/routes.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">15</td>
-            <td class="cell--number">6</td>
-            <td class="cell--number">6</td>
+            <td class="cell--number">18</td>
+            <td class="cell--number">8</td>
+            <td class="cell--number">8</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.00</td>
             
@@ -275,7 +286,7 @@
             <td class="cell--number">10</td>
             <td class="cell--number">10</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">10.60</td>
+            <td class="cell--number">11.30</td>
             
           </tr>
         
@@ -297,7 +308,7 @@
             <td class="cell--number">7</td>
             <td class="cell--number">7</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">15.14</td>
+            <td class="cell--number">15.86</td>
             
           </tr>
         
@@ -320,6 +331,17 @@
             <td class="cell--number">11</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.64</td>
+            
+          </tr>
+        
+          <tr class="t-file">
+            <td class="strong t-file__name"><a href="#7f0a780800bcba302ffb4126ab16654d0e8b5f39" class="src_link" title="spec/requests/api/v0/market_vendors_request_spec.rb">spec/requests/api/v0/market_vendors_request_spec.rb</a></td>
+            <td class="red strong cell--number t-file__coverage">44.83 %</td>
+            <td class="cell--number">60</td>
+            <td class="cell--number">29</td>
+            <td class="cell--number">13</td>
+            <td class="cell--number">16</td>
+            <td class="cell--number">0.45</td>
             
           </tr>
         
@@ -372,6 +394,191 @@
       </div>
 
       <div class="source_files">
+      
+        <div class="source_table" id="6ac2f26c7049b0524f2d8c6cdcb17e32e50cd3e2">
+  <div class="header">
+    <h3>app/controllers/api/v0/market_vendors_controller.rb</h3>
+    <h4>
+      <span class="yellow">
+  88.89%
+</span>
+
+      lines covered
+    </h4>
+
+    
+
+    <div class="t-line-summary">
+      <b>9</b> relevant lines.
+      <span class="green"><b>8</b> lines covered</span> and
+      <span class="red"><b>1</b> lines missed.</span>
+    </div>
+
+    
+
+  </div>
+
+  <pre>
+    <ol>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="1">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">class Api::V0::MarketVendorsController &lt; ApplicationController</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="2">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def create</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="3">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    market_vendor = MarketVendor.new(market_vendor_params)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="4">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">require &#39;pry&#39;; binding.pry</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="5">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    if market_vendor.save</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="6">
+            
+            
+
+            
+
+            <code class="ruby">      render json: MarketVendorSerializer.new(market_vendor), status: 201</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="7">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="8">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="9">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="10">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  private</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="11">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def market_vendor_params</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="12">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    params.require(:market_vendor).permit(:market_id, :vendor_id)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="13">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="14">
+            
+            
+
+            
+
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+    </ol>
+  </pre>
+</div>
+
       
         <div class="source_table" id="6984c499f62cf8865afd1a7a89ff6d0bc4118431">
   <div class="header">
@@ -1337,7 +1544,7 @@
 
             
 
-            <code class="ruby">    render json: {</code>
+            <code class="ruby">      render json: {</code>
           </li>
         </div>
       
@@ -1348,7 +1555,7 @@
 
             
 
-            <code class="ruby">      &quot;errors&quot;: [</code>
+            <code class="ruby">        &quot;errors&quot;: [</code>
           </li>
         </div>
       
@@ -1359,7 +1566,7 @@
 
             
 
-            <code class="ruby">        { </code>
+            <code class="ruby">          { </code>
           </li>
         </div>
       
@@ -1370,7 +1577,7 @@
 
             
 
-            <code class="ruby">          &quot;detail&quot;: &quot;Couldn&#39;t find Vendor with &#39;id&#39;=#{params[:id]}&quot;</code>
+            <code class="ruby">            &quot;detail&quot;: &quot;Couldn&#39;t find Vendor with &#39;id&#39;=#{params[:id]}&quot;</code>
           </li>
         </div>
       
@@ -1381,7 +1588,7 @@
 
             
 
-            <code class="ruby">          }]</code>
+            <code class="ruby">            }]</code>
           </li>
         </div>
       
@@ -1392,7 +1599,7 @@
 
             
 
-            <code class="ruby">        },</code>
+            <code class="ruby">          },</code>
           </li>
         </div>
       
@@ -1403,7 +1610,7 @@
 
             
 
-            <code class="ruby">      status: 404</code>
+            <code class="ruby">        status: 404</code>
           </li>
         </div>
       
@@ -1491,7 +1698,7 @@
 
             
 
-            <code class="ruby">         }]</code>
+            <code class="ruby">           }]</code>
           </li>
         </div>
       
@@ -1502,7 +1709,7 @@
 
             
 
-            <code class="ruby">       },</code>
+            <code class="ruby">         },</code>
           </li>
         </div>
       
@@ -4280,8 +4487,8 @@
     
 
     <div class="t-line-summary">
-      <b>6</b> relevant lines.
-      <span class="green"><b>6</b> lines covered</span> and
+      <b>8</b> relevant lines.
+      <span class="green"><b>8</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -4387,7 +4594,7 @@
 
             
 
-            <code class="ruby">      resources :vendors, only: [:show, :create, :update, :destroy]</code>
+            <code class="ruby">      resources :market_vendors, only: [:create]</code>
           </li>
         </div>
       
@@ -4398,7 +4605,7 @@
 
             
 
-            <code class="ruby">      resources :markets, only: [:index, :show] do</code>
+            <code class="ruby">      resources :vendors, only: [:show, :create, :update, :destroy] do</code>
           </li>
         </div>
       
@@ -4409,7 +4616,7 @@
 
             
 
-            <code class="ruby">        resources :vendors, only: [:index], controller: &#39;markets/vendors&#39;</code>
+            <code class="ruby">        resources :markets, only: [:index], controller: &#39;vendors/markets&#39;</code>
           </li>
         </div>
       
@@ -4425,7 +4632,40 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="13">
+          <li class="covered" data-hits="1" data-linenumber="13">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      resources :markets, only: [:index, :show] do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="14">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        resources :vendors, only: [:index], controller: &#39;markets/vendors&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="15">
+            
+            
+
+            
+
+            <code class="ruby">      end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="16">
             
             
 
@@ -4436,7 +4676,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="14">
+          <li class="never" data-hits="" data-linenumber="17">
             
             
 
@@ -4447,7 +4687,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="15">
+          <li class="never" data-hits="" data-linenumber="18">
             
             
 
@@ -4522,8 +4762,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="13" data-linenumber="4">
-            <span class="hits">13</span>
+          <li class="covered" data-hits="14" data-linenumber="4">
+            <span class="hits">14</span>
             
 
             
@@ -4533,8 +4773,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="13" data-linenumber="5">
-            <span class="hits">13</span>
+          <li class="covered" data-hits="14" data-linenumber="5">
+            <span class="hits">14</span>
             
 
             
@@ -4544,8 +4784,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="13" data-linenumber="6">
-            <span class="hits">13</span>
+          <li class="covered" data-hits="14" data-linenumber="6">
+            <span class="hits">14</span>
             
 
             
@@ -4555,8 +4795,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="13" data-linenumber="7">
-            <span class="hits">13</span>
+          <li class="covered" data-hits="14" data-linenumber="7">
+            <span class="hits">14</span>
             
 
             
@@ -4566,8 +4806,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="13" data-linenumber="8">
-            <span class="hits">13</span>
+          <li class="covered" data-hits="14" data-linenumber="8">
+            <span class="hits">14</span>
             
 
             
@@ -4577,8 +4817,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="13" data-linenumber="9">
-            <span class="hits">13</span>
+          <li class="covered" data-hits="14" data-linenumber="9">
+            <span class="hits">14</span>
             
 
             
@@ -4588,8 +4828,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="13" data-linenumber="10">
-            <span class="hits">13</span>
+          <li class="covered" data-hits="14" data-linenumber="10">
+            <span class="hits">14</span>
             
 
             
@@ -4771,8 +5011,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="25" data-linenumber="3">
-            <span class="hits">25</span>
+          <li class="covered" data-hits="26" data-linenumber="3">
+            <span class="hits">26</span>
             
 
             
@@ -4782,8 +5022,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="25" data-linenumber="4">
-            <span class="hits">25</span>
+          <li class="covered" data-hits="26" data-linenumber="4">
+            <span class="hits">26</span>
             
 
             
@@ -4793,8 +5033,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="25" data-linenumber="5">
-            <span class="hits">25</span>
+          <li class="covered" data-hits="26" data-linenumber="5">
+            <span class="hits">26</span>
             
 
             
@@ -4804,8 +5044,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="25" data-linenumber="6">
-            <span class="hits">25</span>
+          <li class="covered" data-hits="26" data-linenumber="6">
+            <span class="hits">26</span>
             
 
             
@@ -4815,8 +5055,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="4" data-linenumber="7">
-            <span class="hits">4</span>
+          <li class="covered" data-hits="5" data-linenumber="7">
+            <span class="hits">5</span>
             
 
             
@@ -5164,6 +5404,697 @@
       
         <div>
           <li class="never" data-hits="" data-linenumber="16">
+            
+            
+
+            
+
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="7f0a780800bcba302ffb4126ab16654d0e8b5f39">
+  <div class="header">
+    <h3>spec/requests/api/v0/market_vendors_request_spec.rb</h3>
+    <h4>
+      <span class="red">
+  44.83%
+</span>
+
+      lines covered
+    </h4>
+
+    
+
+    <div class="t-line-summary">
+      <b>29</b> relevant lines.
+      <span class="green"><b>13</b> lines covered</span> and
+      <span class="red"><b>16</b> lines missed.</span>
+    </div>
+
+    
+
+  </div>
+
+  <pre>
+    <ol>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="1">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">require &#39;rails_helper&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="2">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="3">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">RSpec.describe &#39;Market Vendors API&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="4">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  describe &#39;POST /api/v0/market_vendors&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="5">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    it &#39;can create a market vendor&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="6">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      market_1 = create(:market, name: &quot;Test Market&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="7">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      vendor_1 = create(:vendor)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="8">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="9">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      market_vendor_params = ({ &quot;market_id&quot;: market_1.id, &quot;vendor_id&quot;: vendor_1.id })</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="10">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="11">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      headers = {&quot;CONTENT_TYPE&quot; =&gt; &quot;application/json&quot;}</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="12">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="13">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      post &#39;/api/v0/market_vendors&#39;, headers: headers, params: JSON.generate(market_vendor: market_vendor_params)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="14">
+            
+            
+
+            
+
+            <code class="ruby">      </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="15">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      created_market_vendor = MarketVendor.last</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="16">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="17">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      expect(created_market_vendor.market_id).to eq(market_1.id)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="18">
+            
+            
+
+            
+
+            <code class="ruby">      expect(created_market_vendor.vendor_id).to eq(vendor_1.id)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="19">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="20">
+            
+            
+
+            
+
+            <code class="ruby">      expect(response).to be_successful</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="21">
+            
+            
+
+            
+
+            <code class="ruby">      expect(response.status).to eq(201)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="22">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="23">
+            
+            
+
+            
+
+            <code class="ruby">      get &quot;/api/v0/vendors/#{vendor_1.id}/markets&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="24">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="25">
+            
+            
+
+            
+
+            <code class="ruby">      json = JSON.parse(response.body, symbolize_names: true)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="26">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="27">
+            
+            
+
+            
+
+            <code class="ruby">      expect(json[:data][0]).to have_key(:id)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="28">
+            
+            
+
+            
+
+            <code class="ruby">      expect(json[:data][0][:id]).to eq(market_1.id.to_s)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="29">
+            
+            
+
+            
+
+            <code class="ruby">      expect(json[:data][0][:attributes][:name]).to eq(market_1.name)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="30">
+            
+            
+
+            
+
+            <code class="ruby">      expect(json[:data][0][:attributes][:street]).to eq(market_1.street)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="31">
+            
+            
+
+            
+
+            <code class="ruby">      expect(json[:data][0][:attributes][:city]).to eq(market_1.city)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="32">
+            
+            
+
+            
+
+            <code class="ruby">      expect(json[:data][0][:attributes][:county]).to eq(market_1.county)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="33">
+            
+            
+
+            
+
+            <code class="ruby">      expect(json[:data][0][:attributes][:state]).to eq(market_1.state)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="34">
+            
+            
+
+            
+
+            <code class="ruby">      expect(json[:data][0][:attributes][:zip]).to eq(market_1.zip)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="35">
+            
+            
+
+            
+
+            <code class="ruby">      expect(json[:data][0][:attributes][:lat]).to eq(market_1.lat)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="36">
+            
+            
+
+            
+
+            <code class="ruby">      expect(json[:data][0][:attributes][:lon]).to eq(market_1.lon)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="37">
+            
+            
+
+            
+
+            <code class="ruby">      expect(json[:data][0][:attributes][:vendor_count]).to eq(market_1.vendor_count)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="38">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="39">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="40">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    it &#39;returns a 404 if market does not exist&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="41">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      vendor_1 = create(:vendor)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="42">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="43">
+            
+            
+
+            
+
+            <code class="ruby">      market_vendor_params = ({ &quot;market_id&quot;: 1, &quot;vendor_id&quot;: vendor_1.id })</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="44">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="45">
+            
+            
+
+            
+
+            <code class="ruby">      headers = {&quot;CONTENT_TYPE&quot; =&gt; &quot;application/json&quot;}</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="46">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="47">
+            
+            
+
+            
+
+            <code class="ruby">      post &#39;/api/v0/market_vendors&#39;, headers: headers, params: JSON.generate(market_vendor: market_vendor_params)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="48">
+            
+            
+
+            
+
+            <code class="ruby">      </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="49">
+            
+            
+
+            
+
+            <code class="ruby">      expect(response).to_not be_successful</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="50">
+            
+            
+
+            
+
+            <code class="ruby">      expect(response.status).to eq(404)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="51">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="52">
+            
+            
+
+            
+
+            <code class="ruby">      json = JSON.parse(response.body, symbolize_names: true)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="53">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="54">
+            
+            
+
+            
+
+            <code class="ruby">      expect(json).to have_key(:errors)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="55">
+            
+            
+
+            
+
+            <code class="ruby">      expect(json[:errors][0][:detail]).to eq(&quot;Validation failed: Market must exist&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="56">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="57">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="58">
+            
+            
+
+            
+
+            <code class="ruby">    it &#39;returns a 404 if vendor does not exist&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="59">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="60">
             
             
 
