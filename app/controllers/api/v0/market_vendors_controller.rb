@@ -21,7 +21,24 @@ class Api::V0::MarketVendorsController < ApplicationController
       },
       status: 422
     end
-    require 'pry'; binding.pry
+  end
+
+  def destroy
+    market = Market.find_by_id(params[:market_vendor][:market_id])
+    vendor = Vendor.find_by_id(params[:market_vendor][:vendor_id])
+
+    if market.nil? || vendor.nil?
+      render json: {
+        "errors": [
+          { 
+            "detail": "No MarketVendor with market_id=#{params[:market_vendor][:market_id]} AND vendor_id=#{params[:market_vendor][:vendor_id]} exists"
+            }]
+          },
+      status: 404
+    else
+      market_vendor = MarketVendor.find_market_vendor(market, vendor)
+      market_vendor.destroy_all
+    end
   end
 
   private

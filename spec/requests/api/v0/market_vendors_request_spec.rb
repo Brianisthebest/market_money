@@ -95,7 +95,46 @@ RSpec.describe 'Market Vendors API' do
 
   describe 'DELETE /api/v0/market_vendors' do
     it 'deletes the relationship between a market and vendor' do
-      
+      market_1 = create(:market)
+      market_2 = create(:market)
+      vendor = create(:vendor)
+
+      market_vendor = create(:market_vendor, market_id: market_1.id, vendor_id: vendor.id)
+      create(:market_vendor, market_id: market_2.id, vendor_id: vendor.id)
+
+      market_vendor_params = ({ "market_id": market_1.id, "vendor_id": vendor.id })
+
+      headers = {"CONTENT_TYPE" => "application/json"}
+
+      delete "/api/v0/market_vendors/", headers: headers, params: JSON.generate(market_vendor: market_vendor_params)
+
+      expect(response).to be_successful
+      expect(response.status).to eq(204)
+      expect(MarketVendor.find_by_id(market_vendor.id)).to be(nil)
+
+      get "/api/v0/vendors/#{vendor.id}/markets"
+
+      json = JSON.parse(response.body, symbolize_names: true)
+
+      json[:data].each do |market|
+        expect(market[:id]).to eq(market_2.id.to_s)
+        expect(market[:id]).to_not eq(market_1.id.to_s)
+      end
+    end
+
+    it 'returns a 404 if market does not exist' do
+      market_vendor_params = ({ "market_id": 10, "vendor_id": 10 })
+
+      headers = {"CONTENT_TYPE" => "application/json"}
+
+      delete "/api/v0/market_vendors/", headers: headers, params: JSON.generate(market_vendor: market_vendor_params)
+
+      expect(response).to_not be_successful
+      expect(response.status).to eq(404)
+
+      json = JSON.parse(response.body, symbolize_names: true)
+
+      expect(json[:errors][0][:detail]).to eq("No MarketVendor with market_id=10 AND vendor_id=10 exists")
     end
   end
 end
