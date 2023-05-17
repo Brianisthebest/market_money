@@ -35,13 +35,13 @@ class Api::V0::VendorsController < ApplicationController
     vendor = Vendor.find_by_id(params[:id])
 
     if vendor.nil?
-    render json: {
-      "errors": [
-        { 
-          "detail": "Couldn't find Vendor with 'id'=#{params[:id]}"
-          }]
-        },
-      status: 404
+      render json: {
+        "errors": [
+          { 
+            "detail": "Couldn't find Vendor with 'id'=#{params[:id]}"
+            }]
+          },
+        status: 404
     elsif vendor.update(vendor_params)
       render json: VendorSerializer.new(vendor)
     else
@@ -49,8 +49,8 @@ class Api::V0::VendorsController < ApplicationController
         "errors": [
          { 
            "detail": "Validations failed: #{vendor.errors.full_messages.to_sentence}" 
-         }]
-       },
+           }]
+         },
       status: 400
     end
   end
