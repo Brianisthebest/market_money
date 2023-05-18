@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   delete "/api/v0/market_vendors/", to: "api/v0/market_vendors#destroy"
+  get "/api/v0/markets/search", to: "api/v0/markets#search"
   
   namespace :api do
     namespace :v0 do
