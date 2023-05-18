@@ -9,7 +9,8 @@ class Api::V0::MarketsController < ApplicationController
       render json: {
                      "errors": [
                       { 
-                        "detail": "Couldn't find Market with 'id'=#{params[:id]}" 
+                        status: "404",
+                        detail: "Couldn't find Market with 'id'=#{params[:id]}" 
                       }]
                     },
                     status: 404
@@ -19,6 +20,8 @@ class Api::V0::MarketsController < ApplicationController
   end
 
   def search
-    require 'pry'; binding.pry
+    markets = Market.search_for_markets(params[:state], params[:city], params[:name])
+    
+    render json: MarketSerializer.new(markets)
   end
 end

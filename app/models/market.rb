@@ -11,4 +11,8 @@ class Market < ApplicationRecord
   def get_vendors
     self.vendors
   end
+
+  def self.search_for_markets(state, city, name)
+    Market.where("name ILIKE ? and city ILIKE ? and state ILIKE ?", "%#{name}%", "%#{city}%", "%#{state}%")
+  end
 end
