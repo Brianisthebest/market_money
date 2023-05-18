@@ -111,21 +111,25 @@ RSpec.describe 'Markets API' do
       market_1 = create(:market, name: 'Farmers Market', city: 'Colorado Springs', state: 'Colorado')
 
       query_params = {
+                      name: 'Farmers Market',
                       city: 'Colorado Springs',
-                      state: 'Colorado',
-                      name: 'Farmers Market'
-      }
+                      state: 'Colorado'
+                      }
       get '/api/v0/markets/search', params: query_params
 
       expect(response).to be_successful
       expect(response.status).to eq(200)
 
       json = JSON.parse(response.body, symbolize_names: true)
-
+      
       expect(json[:data][0][:id]).to eq(market_1.id.to_s)
       expect(json[:data][0][:attributes][:name]).to eq(market_1.name)
       expect(json[:data][0][:attributes][:street]).to eq(market_1.street)
       expect(json[:data][0][:attributes][:city]).to eq(market_1.city)
     end
+
+    it 'returns a market with just a state and city or state and name'
+    it 'returns a market with just a state or name'
+    it 'returns an error when just a city or city and name are passed'
   end
 end
