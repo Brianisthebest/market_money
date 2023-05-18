@@ -1,11 +1,6 @@
 class AtmFacade
-  def initialize(lat, lon)
-    @lat = lat
-    @lon = lon
-  end
-
-  def nearby_atms
-    results = service.nearby_atms(@lat, @lon)
+  def nearby_atms(lat, lon)
+    results = service.nearby_atms(lat, lon)
     
     results[:results].map do |result|
       Atm.new(result)
