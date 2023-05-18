@@ -47,14 +47,11 @@ RSpec.describe 'Markets API' do
 
     it 'returns a new attribute called vendor_count' do
       market_1 = create(:market)
-      @vendors = []
-      5.times do
-        @vendors << create(:vendor, credit_accepted: true)
-      end
+      vendors = create_list(:vendor, 5)
 
-      create(:market_vendor, market_id: market_1.id, vendor_id: @vendors[0].id)
-      create(:market_vendor, market_id: market_1.id, vendor_id: @vendors[1].id)
-      create(:market_vendor, market_id: market_1.id, vendor_id: @vendors[2].id)
+      create(:market_vendor, market_id: market_1.id, vendor_id: vendors[0].id)
+      create(:market_vendor, market_id: market_1.id, vendor_id: vendors[1].id)
+      create(:market_vendor, market_id: market_1.id, vendor_id: vendors[2].id)
       
       get '/api/v0/markets'
 
