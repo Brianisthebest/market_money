@@ -11,7 +11,7 @@ RSpec.describe 'Market ATMs API' do
       expect(response.status).to eq(200)
 
       json = JSON.parse(response.body, symbolize_names: true)
-require 'pry'; binding.pry
+
       expect(json[:data]).to be_an(Array)
 
       json[:data].each do |atm|
@@ -22,6 +22,18 @@ require 'pry'; binding.pry
         expect(atm[:attributes]).to have_key(:lon)
         expect(atm[:attributes]).to have_key(:distance)
       end
+    end
+
+    it 'returns a 404 error when a market is not found' do
+      get "/api/v0/markets/200/nearest_atms"
+
+      expect(response).to_not be_successful
+      expect(response.status).to eq(404)
+
+      json = JSON.parse(response.body, symbolize_names: true)
+
+      expect(json).to have_key(:errors)
+      expect(json[:errors][0][:detail]).to eq("Couldn\'t find Market with \'id\'=200")
     end
   end
 end
