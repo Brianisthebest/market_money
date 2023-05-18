@@ -112,7 +112,7 @@ RSpec.describe 'Markets API' do
 
       query_params = {
                       name: 'Farmers Market',
-                      # city: 'Colorado Springs',
+                      city: 'Colorado Springs',
                       state: 'Colorado'
                       }
       get '/api/v0/markets/search', params: query_params
@@ -128,8 +128,108 @@ RSpec.describe 'Markets API' do
       expect(json[:data][0][:attributes][:city]).to eq(market_1.city)
     end
 
-    it 'returns a market with just a state and city or state and name'
-    it 'returns a market with just a state or name'
-    it 'returns an error when just a city or city and name are passed'
+    it 'returns a market with just a state and city or state and name' do
+      market_1 = create(:market, name: 'Farmers Market', city: 'Colorado Springs', state: 'Colorado')
+      market_2 = create(:market, name: 'Banana Stand', city: 'Denver', state: 'Colorado')
+
+      query_params = {
+                      name: 'Farmers Market',
+                      state: 'Colorado'
+                      }
+      get '/api/v0/markets/search', params: query_params
+
+      expect(response).to be_successful
+      expect(response.status).to eq(200)
+
+      json = JSON.parse(response.body, symbolize_names: true)
+      
+      expect(json[:data][0][:id]).to eq(market_1.id.to_s)
+      expect(json[:data][0][:attributes][:name]).to eq(market_1.name)
+      expect(json[:data][0][:attributes][:street]).to eq(market_1.street)
+      expect(json[:data][0][:attributes][:city]).to eq(market_1.city)
+
+      query_params_2 = {
+        city:'Denver',
+        state: 'Colorado'
+        }
+      get '/api/v0/markets/search', params: query_params_2
+
+      expect(response).to be_successful
+      expect(response.status).to eq(200)
+
+      json = JSON.parse(response.body, symbolize_names: true)
+
+      expect(json[:data][0][:id]).to eq(market_2.id.to_s)
+      expect(json[:data][0][:attributes][:name]).to eq(market_2.name)
+      expect(json[:data][0][:attributes][:street]).to eq(market_2.street)
+      expect(json[:data][0][:attributes][:city]).to eq(market_2.city)
+    end
+
+    it 'returns a market with just a state or name' do
+      market_1 = create(:market, name: 'Farmers Market', city: 'Colorado Springs', state: 'Colorado')
+      market_2 = create(:market, name: 'Banana Stand', city: 'Dallas', state: 'Texas')
+
+      query_params = {
+                      state: 'Colorado'
+                      }
+      get '/api/v0/markets/search', params: query_params
+
+      expect(response).to be_successful
+      expect(response.status).to eq(200)
+
+      json = JSON.parse(response.body, symbolize_names: true)
+      
+      expect(json[:data][0][:id]).to eq(market_1.id.to_s)
+      expect(json[:data][0][:attributes][:name]).to eq(market_1.name)
+      expect(json[:data][0][:attributes][:street]).to eq(market_1.street)
+      expect(json[:data][0][:attributes][:city]).to eq(market_1.city)
+
+      query_params_2 = {
+        name: 'Banana Stand'
+        }
+      get '/api/v0/markets/search', params: query_params_2
+
+      expect(response).to be_successful
+      expect(response.status).to eq(200)
+
+      json = JSON.parse(response.body, symbolize_names: true)
+
+      expect(json[:data][0][:id]).to eq(market_2.id.to_s)
+      expect(json[:data][0][:attributes][:name]).to eq(market_2.name)
+      expect(json[:data][0][:attributes][:street]).to eq(market_2.street)
+      expect(json[:data][0][:attributes][:city]).to eq(market_2.city)
+    end
+
+    it 'returns an error when just a city or city and name are passed' do
+      create(:market, name: 'Farmers Market', city: 'Colorado Springs', state: 'Colorado')
+      create(:market, name: 'Banana Stand', city: 'Dallas', state: 'Texas')
+
+      query_params = {
+                      city: 'Colorado Springs'
+                      }
+      get '/api/v0/markets/search', params: query_params
+
+      expect(response).to_not be_successful
+      expect(response.status).to eq(422)
+
+      json = JSON.parse(response.body, symbolize_names: true)
+
+      expect(json[:errors][0][:status]).to eq('422')
+      expect(json[:errors][0][:detail]).to eq("Invalid set of parameters. Please provide a valid set of parameters to perform a search with this endpoint.")
+
+      query_params_2 = {
+        name: 'Banana Stand',
+        city: 'Dallas'
+        }
+      get '/api/v0/markets/search', params: query_params_2
+
+      expect(response).to_not be_successful
+      expect(response.status).to eq(422)
+
+      json = JSON.parse(response.body, symbolize_names: true)
+
+      expect(json[:errors][0][:status]).to eq('422')
+      expect(json[:errors][0][:detail]).to eq("Invalid set of parameters. Please provide a valid set of parameters to perform a search with this endpoint.")
+    end
   end
 end
