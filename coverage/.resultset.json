@@ -181,12 +181,12 @@
         "lines": [
           1,
           1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
           1,
           1,
           null,
@@ -234,9 +234,56 @@
           null,
           1,
           1,
+          1,
           null,
           null,
           null,
+          null
+        ]
+      },
+      "/Users/brianguthrie/turing/mod3/market_money/app/models/market.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null
+        ]
+      },
+      "/Users/brianguthrie/turing/mod3/market_money/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/brianguthrie/turing/mod3/market_money/app/controllers/api/v0/market_atms_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/brianguthrie/turing/mod3/market_money/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
           null
         ]
       },
@@ -244,21 +291,21 @@
         "lines": [
           1,
           1,
-          2,
-          2,
-          null,
-          null,
           1,
-          2,
-          null,
-          2,
-          20,
-          null,
+          1,
           null,
           null,
           1,
           1,
-          2,
+          null,
+          1,
+          10,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
           null,
           null
         ]
@@ -267,17 +314,17 @@
         "lines": [
           1,
           1,
-          2,
+          1,
           null,
           null,
           1,
-          2,
-          2,
+          1,
+          1,
           null,
           null,
           1,
-          2,
-          2,
+          1,
+          1,
           null,
           null,
           null
@@ -293,16 +340,16 @@
           null,
           null,
           1,
-          20,
-          20,
-          20,
-          20,
-          20,
+          10,
+          10,
+          10,
+          10,
+          10,
           null,
           null
         ]
       }
     },
-    "timestamp": 1684441897
+    "timestamp": 1684444151
   }
 }
