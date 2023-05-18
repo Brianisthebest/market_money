@@ -3,7 +3,8 @@ class Atm
               :address, 
               :lat, 
               :lon, 
-              :distance
+              :distance,
+              :id
 
   def initialize(data)
     @name = data[:poi][:name]
@@ -11,5 +12,6 @@ class Atm
     @lat = data[:position][:lat]
     @lon = data[:position][:lon]
     @distance = data[:dist]
+    @id = nil
   end
 end

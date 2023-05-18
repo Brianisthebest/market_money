@@ -13,7 +13,7 @@ RSpec.describe 'Market ATMs API' do
       json = JSON.parse(response.body, symbolize_names: true)
 
       expect(json[:data]).to be_an(Array)
-
+require 'pry'; binding.pry
       json[:data].each do |atm|
         expect(atm[:type]).to eq("atm")
         expect(atm[:attributes]).to have_key(:name)

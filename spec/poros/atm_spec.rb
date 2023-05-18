@@ -7,7 +7,8 @@ RSpec.describe Atm do
         poi: { name: 'ATM' },
         address: { freeformAddress: '123 AMT St' },
         position: { lat: 39.750783, lon: -104.996435 },
-        dist: 0.1
+        dist: 0.1,
+        id: nil
       }
 
       atm = Atm.new(data)
