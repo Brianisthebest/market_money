@@ -48,5 +48,13 @@ RSpec.describe Market, type: :model do
         expect(@market_2.get_vendors).to eq([@vendors[3], @vendors[4]])
       end
     end
+
+    describe '#self.search_for_markets' do
+      it 'returns all markets that match the search criteria' do
+        market = create(:market, name: 'Test Market', state: 'CO', city: 'Denver')
+
+        expect(Market.search_for_markets(market.state, market.city, market.name)).to eq([market])        
+      end
+    end
   end
 end

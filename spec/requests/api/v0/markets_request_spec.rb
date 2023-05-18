@@ -112,7 +112,7 @@ RSpec.describe 'Markets API' do
 
       query_params = {
                       name: 'Farmers Market',
-                      city: 'Colorado Springs',
+                      # city: 'Colorado Springs',
                       state: 'Colorado'
                       }
       get '/api/v0/markets/search', params: query_params
