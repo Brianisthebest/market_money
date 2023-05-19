@@ -4,12 +4,12 @@ RSpec.describe Atm do
   describe 'atm' do
     it 'exists and has attributes' do
       data = {
-        poi: { name: 'ATM' },
-        address: { freeformAddress: '123 AMT St' },
-        position: { lat: 39.750783, lon: -104.996435 },
-        dist: 0.1,
-        id: nil
-      }
+              poi: { name: 'ATM' },
+              address: { freeformAddress: '123 AMT St' },
+              position: { lat: 39.750783, lon: -104.996435 },
+              dist: 0.1,
+              id: nil
+            }
 
       atm = Atm.new(data)
 

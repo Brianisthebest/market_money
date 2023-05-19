@@ -1,18 +1,13 @@
 class Api::V0::VendorsController < ApplicationController
-  def show
-    vendor = Vendor.find_by_id(params[:id])
+  before_action :set_vendor, only: [:show, :update, :destroy]
+  rescue_from ActiveRecord::RecordNotFound, with: :error_response
 
-    if vendor.nil?
-      render json: {
-        "errors": [
-         { 
-           "detail": "Couldn't find Vendor with 'id'=#{params[:id]}" 
-         }]
-       },
-       status: 404
-    else
-      render json: VendorSerializer.new(vendor)
-    end
+  def error_response(error)
+    render json: ErrorSerializer.new(error).serialize_missing_market_json, status: 404
+  end
+
+  def show
+    render json: VendorSerializer.new(@vendor)
   end
 
   def create
@@ -32,23 +27,13 @@ class Api::V0::VendorsController < ApplicationController
   end
 
   def update
-    vendor = Vendor.find_by_id(params[:id])
-
-    if vendor.nil?
-      render json: {
-        "errors": [
-          { 
-            "detail": "Couldn't find Vendor with 'id'=#{params[:id]}"
-            }]
-          },
-        status: 404
-    elsif vendor.update(vendor_params)
-      render json: VendorSerializer.new(vendor)
+    if @vendor.update(vendor_params)
+      render json: VendorSerializer.new(@vendor)
     else
       render json: {
         "errors": [
          { 
-           "detail": "Validations failed: #{vendor.errors.full_messages.to_sentence}" 
+           "detail": "Validations failed: #{@vendor.errors.full_messages.to_sentence}" 
            }]
          },
       status: 400
@@ -56,23 +41,15 @@ class Api::V0::VendorsController < ApplicationController
   end
 
   def destroy
-    vendor = Vendor.find_by_id(params[:id])
-
-    if vendor.nil?
-      render json: {
-        "errors": [
-          { 
-            "detail": "Couldn't find Vendor with 'id'=#{params[:id]}"
-            }]
-          },
-      status: 404
-    else
-      vendor.destroy
-    end
+    @vendor.destroy
   end
 
   private
   def vendor_params
     params.require(:vendor).permit(:name, :description, :contact_name, :contact_phone, :credit_accepted)
+  end
+
+  def set_vendor
+    @vendor = Vendor.find(params[:id])
   end
 end
