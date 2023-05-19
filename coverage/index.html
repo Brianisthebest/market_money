@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2023-05-18T19:13:11-06:00">2023-05-18T19:13:11-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2023-05-18T19:16:09-06:00">2023-05-18T19:16:09-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -43,8 +43,8 @@
   </div>
 
   <div class="t-line-summary">
-    <b>700</b> relevant lines,
-    <span class="green"><b>700</b> lines covered</span> and
+    <b>701</b> relevant lines,
+    <span class="green"><b>701</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed. </span>
     (<span class="green">
   100.0%
@@ -95,11 +95,11 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#6984c499f62cf8865afd1a7a89ff6d0bc4118431" class="src_link" title="app/controllers/api/v0/markets/vendors_controller.rb">app/controllers/api/v0/markets/vendors_controller.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">22</td>
-            <td class="cell--number">9</td>
-            <td class="cell--number">9</td>
+            <td class="cell--number">27</td>
+            <td class="cell--number">10</td>
+            <td class="cell--number">10</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">1.22</td>
+            <td class="cell--number">1.10</td>
             
           </tr>
         
@@ -231,7 +231,7 @@
             <td class="cell--number">5</td>
             <td class="cell--number">5</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">2.60</td>
+            <td class="cell--number">3.00</td>
             
           </tr>
         
@@ -1329,8 +1329,8 @@
     
 
     <div class="t-line-summary">
-      <b>9</b> relevant lines.
-      <span class="green"><b>9</b> lines covered</span> and
+      <b>10</b> relevant lines.
+      <span class="green"><b>10</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -1364,161 +1364,18 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="3">
-            
-            
-
-            
-
-            <code class="ruby">  </code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="4">
+          <li class="covered" data-hits="1" data-linenumber="3">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  def index</code>
+            <code class="ruby">  rescue_from ActiveRecord::RecordNotFound, with: :error_response</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="5">
-            <span class="hits">2</span>
-            
-
-            
-
-            <code class="ruby">    if @market.nil?</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="6">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">      render json: {</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="7">
-            
-            
-
-            
-
-            <code class="ruby">                     &quot;errors&quot;: [</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="8">
-            
-            
-
-            
-
-            <code class="ruby">                      { </code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="9">
-            
-            
-
-            
-
-            <code class="ruby">                        &quot;detail&quot;: &quot;Couldn&#39;t find Market with &#39;id&#39;=#{params[:market_id]}&quot; </code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="10">
-            
-            
-
-            
-
-            <code class="ruby">                      }]</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="11">
-            
-            
-
-            
-
-            <code class="ruby">                    },</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="12">
-            
-            
-
-            
-
-            <code class="ruby">                    status: 404</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="13">
-            
-            
-
-            
-
-            <code class="ruby">    else</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="14">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">      render json: VendorSerializer.new(@market.get_vendors)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="15">
-            
-            
-
-            
-
-            <code class="ruby">    end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="16">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="17">
+          <li class="never" data-hits="" data-linenumber="4">
             
             
 
@@ -1529,13 +1386,156 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="18">
+          <li class="covered" data-hits="1" data-linenumber="5">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  private</code>
+            <code class="ruby">  def error_response(error)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="6">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    render json: ErrorSerializer.new(error).serialize_missing_market_json, status: 404</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="7">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="8">
+            
+            
+
+            
+
+            <code class="ruby">  </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="9">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def index</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="10">
+            
+            
+
+            
+
+            <code class="ruby">  #   if @market.nil?</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="11">
+            
+            
+
+            
+
+            <code class="ruby">  #     render json: {</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="12">
+            
+            
+
+            
+
+            <code class="ruby">  #                    &quot;errors&quot;: [</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="13">
+            
+            
+
+            
+
+            <code class="ruby">  #                     { </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="14">
+            
+            
+
+            
+
+            <code class="ruby">  #                       &quot;detail&quot;: &quot;Couldn&#39;t find Market with &#39;id&#39;=#{params[:market_id]}&quot; </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="15">
+            
+            
+
+            
+
+            <code class="ruby">  #                     }]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="16">
+            
+            
+
+            
+
+            <code class="ruby">  #                   },</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="17">
+            
+            
+
+            
+
+            <code class="ruby">  #                   status: 404</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="18">
+            
+            
+
+            
+
+            <code class="ruby">  #   else</code>
           </li>
         </div>
       
@@ -1546,18 +1546,18 @@
 
             
 
-            <code class="ruby">  def set_market</code>
+            <code class="ruby">      render json: VendorSerializer.new(@market.get_vendors)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="20">
-            <span class="hits">2</span>
+          <li class="never" data-hits="" data-linenumber="20">
+            
             
 
             
 
-            <code class="ruby">    @market = Market.find_by_id(params[:market_id])</code>
+            <code class="ruby">    # end</code>
           </li>
         </div>
       
@@ -1574,6 +1574,61 @@
       
         <div>
           <li class="never" data-hits="" data-linenumber="22">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="23">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  private</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="24">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def set_market</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="25">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">    @market = Market.find(params[:market_id])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="26">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="27">
             
             
 
@@ -4079,8 +4134,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="5" data-linenumber="3">
-            <span class="hits">5</span>
+          <li class="covered" data-hits="6" data-linenumber="3">
+            <span class="hits">6</span>
             
 
             
@@ -4134,8 +4189,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="5" data-linenumber="8">
-            <span class="hits">5</span>
+          <li class="covered" data-hits="6" data-linenumber="8">
+            <span class="hits">6</span>
             
 
             
