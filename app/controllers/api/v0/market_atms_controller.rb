@@ -1,19 +1,18 @@
 class Api::V0::MarketAtmsController < ApplicationController
-  def index
-    market = Market.find_by_id(params[:id])
+  before_action :set_market, only: [:index]
+  rescue_from ActiveRecord::RecordNotFound, with: :error_response
 
-    if market.nil?
-      render json: {
-        "errors": [
-         { 
-           status: "404",
-           detail: "Couldn't find Market with 'id'=#{params[:id]}" 
-         }]
-       },
-       status: 404
-    else
-      atms = AtmFacade.new.nearby_atms(market.lat, market.lon)
-      render json: AtmSerializer.new(atms)
-    end
+  def error_response(error)
+    render json: ErrorSerializer.new(error).serialize_missing_market_json, status: 404
+  end
+
+  def index
+    atms = AtmFacade.new.nearby_atms(@market.lat, @market.lon)
+    render json: AtmSerializer.new(atms)
+  end
+
+  private
+  def set_market
+    @market = Market.find(params[:id])
   end
 end

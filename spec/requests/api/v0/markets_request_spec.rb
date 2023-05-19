@@ -173,6 +173,7 @@ RSpec.describe 'Markets API' do
       get '/api/v0/markets/search', params: query_params
 
       expect(response).to be_successful
+
       expect(response.status).to eq(200)
 
       json = JSON.parse(response.body, symbolize_names: true)
